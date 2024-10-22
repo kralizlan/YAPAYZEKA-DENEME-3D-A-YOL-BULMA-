@@ -22,8 +22,7 @@ public class Player : MonoBehaviour
         // Eğer hedefe çok yakın değilse
         if (direction.magnitude > 0.1f)
         {
-            // Yalnızca Y ekseninde dönecek şekilde, Y yönü için açıyı al
-            direction.y = 0;  // X ve Z ekseninde dönmeyi engelliyoruz
+            direction.y = 0;  // y ekseninde dönmeyi engelliyoruz
 
             Quaternion targetRotation = Quaternion.LookRotation(direction);
 
