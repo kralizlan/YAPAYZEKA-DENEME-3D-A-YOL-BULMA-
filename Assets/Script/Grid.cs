@@ -102,7 +102,6 @@ public class Grid : MonoBehaviour
         {
             for (int x = 0; x <= path1.Count; x++)
             {
-
             }
         }
 
