@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -96,39 +96,63 @@ public class Grid : MonoBehaviour
         return neighbours;
     }
 
-    public void HedefeGit()
-    {
-        if (path1 != null)
-        {
-            for (int x = 0; x <= path1.Count; x++)
-            {
-            }
-        }
 
-    }
+    //void OnDrawGizmos()
+    //{
+    //    Gizmos.DrawWireCube(transform.position, new Vector3(GridWroldSize.x, 1, GridWroldSize.y));
+
+    //    if (grid != null)
+    //    {
+    //        Node PlayerNode = NodeFromWorldPoint(player.position);
+
+    //        foreach (Node node in grid)
+    //        {
+    //            Gizmos.color = node.Walkable ? Color.green : Color.red;
+
+
+
+    //            if (PlayerNode == node)
+    //            {
+    //                Gizmos.color = Color.cyan;
+    //            }
+
+    //            Gizmos.DrawCube(node.WorldPosition, Vector3.one * (NodeDinameter - 0.1f));
+    //        }
+    //    }
+    //}
+
     void OnDrawGizmos()
-    {
-        Gizmos.DrawWireCube(transform.position, new Vector3(GridWroldSize.x, 1, GridWroldSize.y));
+{
+    DrawPath();
+}
 
+void DrawPath()
+{
         if (grid != null)
         {
             Node PlayerNode = NodeFromWorldPoint(player.position);
+
             foreach (Node node in grid)
             {
                 Gizmos.color = node.Walkable ? Color.green : Color.red;
-                if (path1 != null)
-                    if (path1.Contains(node))
-                        Gizmos.color = Color.black;
+
                 if (PlayerNode == node)
                 {
                     Gizmos.color = Color.cyan;
                 }
+
                 Gizmos.DrawCube(node.WorldPosition, Vector3.one * (NodeDinameter - 0.1f));
-
             }
-
-
-
+        }
+        // Eğer path1 boş veya null değilse
+        if (path1 != null && path1.Count > 0)
+    {
+        // path1'deki her düğüm için siyah küpler çiz
+        foreach (Node node in path1)
+        {
+            Gizmos.color = Color.black;
+            Gizmos.DrawCube(node.WorldPosition, Vector3.one * (NodeDinameter - 0.1f));
         }
     }
+}
 }

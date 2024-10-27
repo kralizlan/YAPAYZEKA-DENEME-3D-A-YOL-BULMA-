@@ -5,8 +5,8 @@ using static UnityEngine.GraphicsBuffer;
 
 public class Player : MonoBehaviour
 {
-    private float speed = 5;
-
+    private float speed = 2;
+    private float moveSpeed = 5;
 
     public void GidilcekYer(Vector3 hedefNoktasi)
     {
@@ -37,14 +37,43 @@ public class Player : MonoBehaviour
 
     private void GameKontrol()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        Vector3 newPosition = transform.position;
+
+        // Yukarı ok tuşu z ekseninde artırma yapar
+        if (Input.GetKey(KeyCode.UpArrow))
+        {
+            newPosition.z += moveSpeed * Time.deltaTime;
+        }
+
+        // Aşağı ok tuşu z ekseninde azaltma yapar
+        if (Input.GetKey(KeyCode.DownArrow))
+        {
+            newPosition.z -= moveSpeed * Time.deltaTime;
+        }
+
+        // Sağ ok tuşu x ekseninde artırma yapar
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            newPosition.x += moveSpeed * Time.deltaTime;
+        }
+
+        // Sol ok tuşu x ekseninde azaltma yapar
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            newPosition.x -= moveSpeed * Time.deltaTime;
+        }
+
+        // Yeni pozisyonu güncelle
+        transform.position = newPosition;
+
+        if (Input.GetKeyDown(KeyCode.KeypadPlus))
             ++speed;
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        if (Input.GetKeyDown(KeyCode.KeypadMinus))
             --speed;
     }
 
     private void Update()
     {
- GameKontrol();
+        GameKontrol();
     }
 }

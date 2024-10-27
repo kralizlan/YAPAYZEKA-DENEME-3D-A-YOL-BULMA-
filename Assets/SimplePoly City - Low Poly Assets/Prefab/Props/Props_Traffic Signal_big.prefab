@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2300000}
   - component: {fileID: 509960722595718879}
   - component: {fileID: 2933321039198943835}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Props_Traffic Signal_big
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,8 +107,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.7467532, y: 6.019949, z: 0.6}
-  m_Center: {x: 1.1135731, y: 3.0100164, z: -0.019756943}
+  m_Size: {x: 2.7467532, y: 5.9790134, z: 0.6}
+  m_Center: {x: 1.1135733, y: 3.0304842, z: -0.019756943}
 --- !u!114 &2933321039198943835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 55711099671089632}
   - component: {fileID: 7084770794120673245}
   - component: {fileID: 941855995692665690}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -238,7 +238,7 @@ GameObject:
   - component: {fileID: 4848758442786126319}
   - component: {fileID: 1357112169198008554}
   - component: {fileID: 5490945617442236314}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Green
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -343,7 +343,7 @@ GameObject:
   - component: {fileID: 6217928463081879531}
   - component: {fileID: 5326176961104190967}
   - component: {fileID: 1374449260978511284}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Yellow
   m_TagString: Untagged
   m_Icon: {fileID: 0}

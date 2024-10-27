@@ -17,7 +17,7 @@ public class Pathfinding : MonoBehaviour
     }
     void GoToTarget()
     {
-        if (grid.path1 != null && grid.path1.Count > 0&&driveable)
+        if (grid.path1 != null && grid.path1.Count > 0 && driveable)
         {
 
             Vector3 hedefNokta = grid.path1[0].WorldPosition;  // İlk path noktası 
@@ -25,7 +25,7 @@ public class Pathfinding : MonoBehaviour
             player.GidilcekYer(hedefNokta);  // Hedef noktayı Player'a gönder
         }
     }
-     
+
 
 
     private void Update()
@@ -99,6 +99,7 @@ public class Pathfinding : MonoBehaviour
         }
         path.Reverse();
         grid.path1 = path;
+
     }
 
 
